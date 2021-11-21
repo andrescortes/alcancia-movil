@@ -69,21 +69,6 @@ public class PersonaController {
         return Response.status(Response.Status.CREATED).entity(persona).build();
     }
 
-    @POST
-    @Produces({MediaType.APPLICATION_JSON})
-    public String autenticacion(Login  login){
-        String   token = "88JJ";
-        boolean autenticacion = false ;
-
-        autenticacion =  personaBO.validate(login);
-
-        if( !autenticacion ){
-            throw new JSONWebApplicationException(
-                    String.format("el usuario es erroneo",login.getUsuario()),Response.Status.CONFLICT);
-        }
-
-        return token; 
-    }
 
 
 

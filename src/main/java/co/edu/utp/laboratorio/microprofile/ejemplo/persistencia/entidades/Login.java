@@ -1,16 +1,18 @@
 package co.edu.utp.laboratorio.microprofile.ejemplo.persistencia.entidades;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
 
 
 @Entity
+@NamedQuery(name = Login.QUERY_VALIDATE_USER,query = "select login from Login login where login.usuario = :usuario")
+
 public class Login implements Serializable {
+
+     public static final String QUERY_VALIDATE_USER = "Login.validUser";
+
     @Id
     @Column(length = 10)
     private String dni;
@@ -18,6 +20,7 @@ public class Login implements Serializable {
     private String usuario;
     @Column(length = 20)
     private String password;
+
 
     public String getDni() {
         return dni;
@@ -43,4 +46,12 @@ public class Login implements Serializable {
         this.password = password;
     }
 
+    @Override
+    public String toString() {
+        return "Login{" +
+                "dni='" + dni + '\'' +
+                ", usuario='" + usuario + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
 }
