@@ -9,7 +9,7 @@ import javax.annotation.sql.DataSourceDefinition;
         serverName = "localhost",
         portNumber = 3306,
         user= "root",
-        password = "12345678",
+        password = "1003",
         databaseName = "ejemplo",
         initialPoolSize = 2,
         minPoolSize = 2,

@@ -9,31 +9,38 @@ import java.util.List;
 import java.util.Objects;
 
 
-
+@Entity
 public class Login implements Serializable {
-
-
-
+    @Id
+    @Column(length = 10)
+    private String dni;
+    @Column(length = 20)
     private String usuario;
+    @Column(length = 20)
     private String password;
 
+    public String getDni() {
+        return dni;
+    }
 
-    public String getUsuario(){
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public String getUsuario() {
         return usuario;
     }
 
-    public String setUsuario(String usuario){
+    public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
 
-    public String getPassword(){
+    public String getPassword() {
         return password;
     }
 
-    public String setPassword(String password){
+    public void setPassword(String password) {
         this.password = password;
     }
-
-
 
 }

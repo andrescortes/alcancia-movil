@@ -1,0 +1,13 @@
+co\edu\utp\laboratorio\microprofile\ejemplo\config\ConfigTestController.class
+co\edu\utp\laboratorio\microprofile\ejemplo\persistencia\entidades\Persona.class
+co\edu\utp\laboratorio\microprofile\ejemplo\negocio\security\TokenAuthtentication.class
+co\edu\utp\laboratorio\microprofile\ejemplo\persistencia\entidades\Login.class
+co\edu\utp\laboratorio\microprofile\ejemplo\metric\MetricController.class
+co\edu\utp\laboratorio\microprofile\ejemplo\negocio\PersonaBO.class
+co\edu\utp\laboratorio\microprofile\ejemplo\persistencia\configuracion\FuenteDatos.class
+co\edu\utp\laboratorio\microprofile\ejemplo\negocio\PersonaController.class
+co\edu\utp\laboratorio\microprofile\ejemplo\persistencia\entidades\Empresa.class
+co\edu\utp\laboratorio\microprofile\ejemplo\persistencia\entidades\Ciudad.class
+co\edu\utp\laboratorio\microprofile\ejemplo\HelloController.class
+co\edu\utp\laboratorio\microprofile\ejemplo\MicroprofileejemploRestApplication.class
+co\edu\utp\laboratorio\microprofile\ejemplo\negocio\exceptions\JSONWebApplicationException.class

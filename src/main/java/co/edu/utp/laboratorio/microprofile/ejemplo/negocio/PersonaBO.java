@@ -53,7 +53,7 @@ public class PersonaBO {
     public boolean validate(Login login){
         boolean autenticado = false;
         
-        if(login.getUsuario.equals("usuario1") && login.getPassword.equals("clave1")){
+        if(login.getUsuario().equals("usuario1") && login.getPassword().equals("clave1")){
            autenticado = true;
         }
 
