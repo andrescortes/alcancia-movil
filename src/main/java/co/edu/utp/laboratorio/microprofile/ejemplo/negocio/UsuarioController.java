@@ -3,6 +3,7 @@ package co.edu.utp.laboratorio.microprofile.ejemplo.negocio;
 import co.edu.utp.laboratorio.microprofile.ejemplo.negocio.exceptions.JSONWebApplicationException;
 import co.edu.utp.laboratorio.microprofile.ejemplo.persistencia.entidades.Login;
 
+import java.util.logging.Logger;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 import javax.ws.rs.POST;
@@ -18,13 +19,16 @@ import java.util.List;
 public class UsuarioController {
     @Inject
     private LoginBO loginBO;
+    static Logger logger = Logger.getLogger(String.valueOf(UsuarioController.class));
 
     @POST
     @Produces({MediaType.APPLICATION_JSON})
     public String autenticacion(Login  login){
+
         String   token = "88JJ";
         List<Login> usuarioList ;
-
+        logger.info("se recibe peticion");
+        logger.info(login.toString());
         usuarioList =  loginBO.validateUser(login);
 
         if( usuarioList.isEmpty()|| usuarioList == null  ){
