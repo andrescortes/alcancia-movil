@@ -19,19 +19,13 @@ import java.util.List;
 public class UsuarioController {
     @Inject
     private LoginBO loginBO;
-    static Logger logger = Logger.getLogger(String.valueOf(UsuarioController.class));
 
     @POST
     public String autenticacion(Login  login){
 
         String  token = "";
         List<Login> usuarioList ;
-        logger.info("se recibe peticion");
-        logger.info(login.toString());
-
         usuarioList =  loginBO.validateUser(login);
-        System.out.println("la lista es: " + usuarioList);
-
         if( usuarioList.isEmpty()|| usuarioList == null  ){
             throw new JSONWebApplicationException(
                     String.format("el usuario ingresado no existe o es erroneo",login.getUsuario()), Response.Status.CONFLICT);
