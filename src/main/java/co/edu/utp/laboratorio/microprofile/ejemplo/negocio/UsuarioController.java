@@ -22,24 +22,23 @@ public class UsuarioController {
     static Logger logger = Logger.getLogger(String.valueOf(UsuarioController.class));
 
     @POST
-    @Produces({MediaType.APPLICATION_JSON})
     public String autenticacion(Login  login){
 
-        String   token = "88JJ";
+        String  token = "";
         List<Login> usuarioList ;
         logger.info("se recibe peticion");
         logger.info(login.toString());
+
         usuarioList =  loginBO.validateUser(login);
+        System.out.println("la lista es: " + usuarioList);
 
         if( usuarioList.isEmpty()|| usuarioList == null  ){
             throw new JSONWebApplicationException(
                     String.format("el usuario ingresado no existe o es erroneo",login.getUsuario()), Response.Status.CONFLICT);
         }else{
             for (Login usuario : usuarioList) {
-                System.out.println(usuario.toString());
-
-                if(usuario.getPassword().equals(login.getPassword())) {
-                    return token;
+                if(usuario.getPassword().equals(login.getPassword())  ) {
+                    token= "88JJ";
                 }else{
                     throw new JSONWebApplicationException(
                             String.format("el usuario o contraseña es erroneo",login.getUsuario()), Response.Status.CONFLICT);
