@@ -15,8 +15,11 @@ public class LoginBO {
 
     public List<Login> validateUser(Login login){
         return entityManager.createNamedQuery(Login.QUERY_VALIDATE_USER,Login.class)
-            .setParameter("usuario",login.getUsuario()).getResultList();
+            .setParameter("usuario",login.getUsuario()).setParameter("password",login.getPassword()).getResultList();
     }
 
+    public void registrarUsuario(Login login){
+        entityManager.persist(login);
+    }
 
 }
